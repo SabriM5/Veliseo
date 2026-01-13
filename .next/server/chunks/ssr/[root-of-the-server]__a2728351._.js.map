@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 11, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/sabri/Downloads/ESEO/S9/architecture/Veliseo/REP/src/app/page.tsx"],"sourcesContent":["import React from 'react'\n\nexport default function HomePage() {\n  return (\n    <div>HomePage</div>\n  )\n}\n"],"names":[],"mappings":";;;;;;AAEe,SAAS;IACtB,qBACE,8OAAC;kBAAI;;;;;;AAET","debugId":null}}]
+}

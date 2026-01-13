@@ -1,0 +1,27 @@
+{
+  "pages": {
+    "/admin/planning/page": [
+      "static/chunks/[root-of-the-server]__0f0ba101._.css",
+      "static/chunks/node_modules_97f3ce1d._.js",
+      "static/chunks/src_app_layout_tsx_f8182b1e._.js",
+      "static/chunks/node_modules_next_dist_client_components_builtin_global-error_82306dce.js",
+      "static/chunks/node_modules_lodash_a1d49073._.js",
+      "static/chunks/node_modules_@popperjs_core_lib_edc15795._.js",
+      "static/chunks/node_modules_react-big-calendar_a16467a5._.js",
+      "static/chunks/node_modules_date-fns_4449e108._.js",
+      "static/chunks/node_modules_608c727d._.js",
+      "static/chunks/src_components_planning-calendar_tsx_f3a34895._.js",
+      "static/chunks/node_modules_react-big-calendar_lib_b4e174d5._.css",
+      "static/chunks/src_app_admin_planning_page_tsx_82306dce._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_4e3b0bdd._.js",
+      "static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "static/chunks/node_modules_next_dist_compiled_next-devtools_index_a9cb0712.js",
+      "static/chunks/node_modules_next_dist_compiled_5150ccfd._.js",
+      "static/chunks/node_modules_next_dist_client_cf1d9188._.js",
+      "static/chunks/node_modules_next_dist_b0daae9a._.js",
+      "static/chunks/4e2c9_@swc_helpers_cjs_2b52ba32._.js",
+      "static/chunks/_a0ff3932._.js",
+      "static/chunks/turbopack-_3fb52da9._.js"
+    ]
+  }
+}
