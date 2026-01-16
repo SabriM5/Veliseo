@@ -1,4 +1,5 @@
-// 'use server'
+// VERSION BDD
+//'use server'
 
 // import { pool } from "@/lib/auth"; // Ton pool Postgres existant
 // import { revalidatePath } from "next/cache";

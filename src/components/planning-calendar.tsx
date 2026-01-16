@@ -218,6 +218,9 @@ export default function PlanningCalendar() {
     </div>
   );
 }
+
+// VERSION BDD
+
 // "use client";
 
 // import React, { useState, useCallback, useEffect } from "react";

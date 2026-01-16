@@ -1,3 +1,5 @@
+// VERSION BDD
+
 // import PlanningCalendar from "@/components/planning-calendar";
 // // import { getLessons } from "@/actions/schedule_actions";
 
