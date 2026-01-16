@@ -25,7 +25,7 @@ const JASMIN_PASSWORD = process.env.JASMIN_PASSWORD;
 
 export const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  // options: "-c search_path=sys" // Parfois nécessaire, parfois non selon ton setup
+   options: "-c search_path=sys" // Parfois nécessaire, parfois non selon ton setup
 });
 
 export const auth = betterAuth({
@@ -51,24 +51,19 @@ export const auth = betterAuth({
   databaseHooks: {
     user: {
       create: {
-        // "context" est le 2eme argument, on ne l'utilise pas ici mais il faut respecter la signature
         before: async (user: any) => { 
-          // J'utilise 'any' temporairement ici pour débloquer ton rouge sur 'id'/'name'
-          // car le type inferré par BetterAuth est strict avant la création.
           
-          // Logique de génération de nom unique
           const newName = await generateUniqueName(user.name, pool);
           
           return {
             data: {
               ...user,
               name: newName,
-              id: newName, // On force l'ID égal au username
+              id: newName, 
             }
           };
         },
         after: async (user: any) => {
-          // On caste user en "any" ou notre interface pour accéder à metadata sans erreur
           const typedUser = user as UserWithCustomFields;
           
           // Sécurité : si pas de metadata, on ne fait rien (évite le crash)
@@ -77,13 +72,10 @@ export const auth = betterAuth({
           const maxRetries = 10;
           let attempt = 0;
 
-          // ========================
-          // GESTION VACATAIRE
-          // ========================
+          
           if (typedUser.role === "VACAT") {
             while (attempt < maxRetries) {
               try {
-                // metadata[2] est le préfixe email
                 const prefixe = await generateUniqueEmailEseo(typedUser.metadata[2] + "@eseo.fr", "sys.prof", pool);
                 const fullEmail = `${prefixe}@eseo.fr`;
 
@@ -93,20 +85,17 @@ export const auth = betterAuth({
                 );
                 break; 
               } catch (err: any) {
-                if (err.code === '23505') { // Code erreur Unique Violation
+                if (err.code === '23505') { 
                   attempt++;
                   continue;
                 }
-                // Rollback manuel (compensation)
                 await pool.query(`DELETE FROM sys.user WHERE id=$1`, [typedUser.id]);
                 throw err;
               }
             }
           }
 
-          // ========================
-          // GESTION ETUDIANT
-          // ========================
+          
           if (typedUser.role === "ELING") {
             attempt = 0;
             while (attempt < maxRetries) {
@@ -136,11 +125,9 @@ export const auth = betterAuth({
     },
   },
   plugins: [
-    nextCookies(), // Si ce plugin est toujours rouge, supprime-le, il est optionnel dans les dernières versions Next.js
+    nextCookies(), 
     phoneNumber({
-      sendOTP: async ({ phoneNumber, code }, request) => {
-        // Ta logique d'envoi OTP existante
-        // ... (ton code Jasmin)
+      sendOTP: async ({ phoneNumber, code }, request) => {      
         console.log(`OTP envoyé à ${phoneNumber}: ${code}`);
       },
     }),

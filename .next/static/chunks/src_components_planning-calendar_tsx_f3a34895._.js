@@ -508,7 +508,6 @@ function PlanningCalendar() {
  //       const targetRoom = resourceId || event.resourceId; 
  //       const result = await moveLesson(event.id, start, end, targetRoom);
  //       if (!result.success) {
- //         // AÏE : CONFLIT !
  //         toast.error(result.message); // Affiche "Impossible : Salle prise par..."
  //         setEvents(oldEvents); // On remet le cours à sa place d'origine (Rollback)
  //       } else {

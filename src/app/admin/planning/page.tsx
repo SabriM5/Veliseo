@@ -34,7 +34,6 @@ export default function PlanningPage() {
         <h1 className="text-2xl font-bold text-gray-800">Planning (Mode Démo)</h1>
       </div>
       
-      {/* On n'envoie plus de props, le calendrier gérera ses propres données */}
       <PlanningCalendar />
     </div>
   );
